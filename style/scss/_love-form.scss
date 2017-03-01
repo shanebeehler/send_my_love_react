@@ -1,0 +1,87 @@
+.form-wrap {
+  // text-align: center;
+  // border: 1px solid red;
+  border-radius: 1px;
+  max-width: 85%;
+  margin: auto;
+  // background-color: white;
+  padding: 5% 0;
+  // color: purple;
+  // min-height: 36em;
+  // background-image: url('../../assets/heart.png');
+
+  // div {
+  //   padding: 10% 0;
+  // }
+}
+
+.love-form {
+
+  div, button {
+    margin: 1em 4em;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    font-weight: 200;
+    font-size: 1.5em;
+    margin-bottom: .2em;
+    // display: none;
+
+    &:first-child {
+      padding-top: 1em;
+    }
+    &:nth-child(2) {
+      font-family: 'Courgette';
+      color: #EF5C48;
+      font-size: 1em;
+      padding-left: 1em;
+    }
+  }
+
+  // input {
+  //   height: 2em;
+  //   width: 90%;
+  //   font-size: 1em;
+  //   text-align: center;
+  // }
+  //
+  // input::-webkit-input-placeholder {
+  //   text-align: center;
+  //   font-size: 1em;
+  //   font-weight: 100;
+  //   color: #EF5C48;
+  // }
+  button, input, .button {
+    font-size: 1.5em;
+    margin: .5em 0 0 0;
+    background-color: #EF5C48;
+    color: white;
+    padding: .1em .6em;
+    min-width: 100%;
+    margin-bottom: .4em;
+    // border: 1px solid #EF5C48;
+    border-radius: 2px;
+    font-family: 'Courgette';
+
+    &:hover {
+      background-color: white;
+      color: #EF5C48;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.location-input {
+  border: none;
+}
+
+.location-button {
+  // display: none;
+  width: 20%;
+}

@@ -1,0 +1,38 @@
+.stats {
+  text-align: center;
+  font-weight: 200;
+  text-transform: capitalize;
+  max-width: 85%;
+  margin: auto;
+  margin-top: -18px;
+
+  div {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin: auto;
+
+    &:first-child {
+      display: block;
+      width: 100%;
+    }
+
+    &:first-child, &:nth-child(2), &:nth-child(3) {
+      border-bottom: 1px solid black;
+    }
+
+    p {
+      &:first-child {
+        font-size: 1.3em;
+        margin-top: 1.5em;
+      }
+      &:last-child {
+        // background-color: black;
+        color: #EF5C48;
+        font-size: 2em;
+        width: 30%;
+        margin: 0 auto 1em auto;
+      }
+    }
+  }
+}
