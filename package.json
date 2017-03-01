@@ -2,7 +2,7 @@
   "name": "send_my_react",
   "version": "1.0.0",
   "engines": {
-  "node": "6.9.4"
+  "node": "7.6.0"
   },
   "description": "",
   "main": "webpack.config.js",
