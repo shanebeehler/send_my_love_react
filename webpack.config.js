@@ -1,8 +1,8 @@
   var path = require('path');
   var config = {
-    entry: path.resolve(__dirname, 'src/index.jsx'),
+    entry: path.resolve(__dirname, './src/index.jsx'),
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, '/build'),
       publicPath: "http://localhost:8080/",
       filename: 'bundle.js'
     },
