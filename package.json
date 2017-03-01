@@ -5,8 +5,10 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --content-base build/ --host 0.0.0.0",
-    "build": "webpack"
+    "dev": "webpack-dev-server --content-base build/ --host 0.0.0.0",
+    "build": "webpack",
+    "postinstall": "webpack -p",
+    "start": "node server.js"
   },
   "author": "Shane Beehler",
   "license": "ISC",
