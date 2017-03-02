@@ -3,15 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FacebookLoginDisplay from '../components/facebook_login_display';
 import { facebookObject } from '../actions/index';
-import { config } from '../../config.js';
-
-const APP_ID  = config.app_id;
+// import { config } from '../../config.js';
 
 class FacebookLogin extends React.Component {
   componentDidMount() {
     window.fbAsyncInit = function() {
       FB.init({
-        appId      : APP_ID,
+        appId      : FB_APP_ID,
         cookie     : true,  // enable cookies to allow the server to access
                             // the session
         xfbml      : true,  // parse social plugins on this page
@@ -30,10 +28,6 @@ class FacebookLogin extends React.Component {
           console.log('User cancelled login or did not fully authorize.');
         }
       });
-
-      // FB.getLoginStatus(function(response) {
-      //   this.statusChangeCallback(response);
-      // }.bind(this));
     }.bind(this);
 
     // Load the SDK asynchronously
@@ -45,20 +39,6 @@ class FacebookLogin extends React.Component {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   }
-
-  // statusChangeCallback(response) {
-  //   console.log('statusChangeCallback');
-  //   if (response.status === 'connected') {
-  //     // Logged into your app and Facebook.
-  //     this.testAPI();
-  //   }
-  // }
-
-  // testAPI() {
-  //   FB.api('/me', (response) => {
-  //     this.setState({name: response.name});
-  //   });
-  // }
 
   render() {
     return(

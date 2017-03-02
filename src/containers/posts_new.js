@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { createPost } from '../actions/index';
 import {hashHistory} from 'react-router';
 import axios from 'axios';
-import { config } from '../../config.js';
-
-const API_KEY  = config.geocode_api_key;
+// import { config } from '../../config.js';
 
 class PostsNew extends React.Component {
 
