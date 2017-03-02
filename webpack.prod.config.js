@@ -17,9 +17,4 @@ config.plugins.push(
   })
 );
 
-// export var vars = {
-//   GEOCODE_KEY: process.env.GEOCODE_KEY,
-//   FB_APP_ID: process.env.FB_APP_ID
-// }
-
 module.exports = config;
