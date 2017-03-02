@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 8080
-// export var fb_app_id = process.env.FB_APP_ID;
+const fb_app_id = process.env.FB_APP_ID
+console.log(fb_app_id);
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
