@@ -43,11 +43,4 @@ class PostsNew extends React.Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     name: state.name,
-//     location: state.location
-//   }
-// }
-
 export default connect(null, { createPost })(PostsNew);
