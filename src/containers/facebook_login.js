@@ -4,9 +4,10 @@ import { bindActionCreators } from 'redux';
 import FacebookLoginDisplay from '../components/facebook_login_display';
 import { facebookObject } from '../actions/index';
 // import { config } from '../../config.js';
-import { vars } from '../../webpack.prod.config.js';
-
-const FB_APP_ID = vars.FB_APP_ID;
+// import { vars } from '../../webpack.prod.config.js';
+//
+// const FB_APP_ID = vars.FB_APP_ID;
+FB_APP_ID = process.env.FB_APP_ID;
 
 class FacebookLogin extends React.Component {
   componentDidMount() {
