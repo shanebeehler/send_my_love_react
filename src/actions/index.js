@@ -9,9 +9,10 @@ export const SHOW_POSITION   = 'SHOW_POSITION';
 export const FACEBOOK_OBJECT = 'FACEBOOK_OBJECT';
 export const FETCH_STATS     = 'FETCH_STATS';
 export const FETCH_PROFILE   = 'FETCH_PROFILE'
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 // const API_KEY  = config.geocode_api_key;
-const GEOCODE_KEY = process.env.GEOCODE_KEY;
+const GEOCODE_KEY = runtimeEnv().GEOCODE_KEY;
 console.log(process.env);
 const ROOT_URL = 'https://protected-escarpment-52671.herokuapp.com/posts/';
 const PROFILE_URL = 'https://protected-escarpment-52671.herokuapp.com/';
