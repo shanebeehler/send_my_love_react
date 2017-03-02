@@ -7,7 +7,7 @@ import { facebookObject } from '../actions/index';
 // import { vars } from '../../webpack.prod.config.js';
 //
 // const FB_APP_ID = vars.FB_APP_ID;
-FB_APP_ID = process.env.fb_app_id;
+const FB_APP_ID = process.env.fb_app_id;
 
 class FacebookLogin extends React.Component {
   componentDidMount() {
