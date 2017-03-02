@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FacebookLoginDisplay from '../components/facebook_login_display';
 import { facebookObject } from '../actions/index';
+import axios from 'axios';
 // import { config } from '../../config.js';
 // import { vars } from '../../webpack.prod.config.js';
 //
@@ -11,6 +12,7 @@ const FB_APP_ID = process.env.FB_APP_ID;
 
 class FacebookLogin extends React.Component {
   componentDidMount() {
+    console.log(axios.get('https://api.heroku.com/apps/radiant-waters-79575/config-vars'));
     window.fbAsyncInit = function() {
       FB.init({
         appId      : FB_APP_ID,
