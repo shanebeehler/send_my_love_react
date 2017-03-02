@@ -8,7 +8,7 @@ import runtimeEnv from '@mars/heroku-js-runtime-env';
 // import { vars } from '../../webpack.prod.config.js';
 //
 // const FB_APP_ID = vars.FB_APP_ID;
-const FB_APP_ID = runtimeEnv().FB_APP_ID;
+const FB_APP_ID = '1317906064955234';
 
 class FacebookLogin extends React.Component {
   componentDidMount() {
