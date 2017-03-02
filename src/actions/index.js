@@ -1,7 +1,7 @@
 import axios from 'axios';
 import haversine from 'haversine-distance';
 // import { config } from '../../config.js';
-import { config } from '../../webpack.prod.config.js';
+import { vars } from '../../webpack.prod.config.js';
 
 export const FETCH_POSTS     = 'FETCH_POSTS';
 export const CREATE_POST     = 'CREATE_POST';
@@ -11,7 +11,7 @@ export const FETCH_STATS     = 'FETCH_STATS';
 export const FETCH_PROFILE   = 'FETCH_PROFILE'
 
 // const API_KEY  = config.geocode_api_key;
-const GEOCODE_KEY = config.GEOCODE_KEY;
+const GEOCODE_KEY = vars.GEOCODE_KEY;
 const ROOT_URL = 'https://protected-escarpment-52671.herokuapp.com/posts/';
 const PROFILE_URL = 'https://protected-escarpment-52671.herokuapp.com/';
 

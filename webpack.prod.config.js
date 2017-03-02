@@ -1,7 +1,7 @@
 var config = require('./webpack.config.js');
 var webpack = require('webpack');
 
-export var config = {
+export var vars = {
   GEOCODE_KEY: process.env.GEOCODE_KEY,
   FB_APP_ID: process.env.FB_APP_ID
 }
