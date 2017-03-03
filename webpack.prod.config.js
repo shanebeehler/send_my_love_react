@@ -5,11 +5,19 @@ config.plugins.push(
   new webpack.DefinePlugin({
     "process.env": {
       "NODE_ENV":     JSON.stringify("production"),
-      "FB_APP_ID":    process.env.FB_APP_ID,
-      "GEOCODE_KEY":  process.env.GEOCODE_KEY
+      // "FB_APP_ID":    process.env.FB_APP_ID,
+      // "GEOCODE_KEY":  process.env.GEOCODE_KEY
     }
   })
 );
+
+config.plugins.push(
+  new.webpack.EnvironmentPlugin([
+    'FB_APP_ID'
+  ])
+);
+
+config.plugins.EnvironmentPlugin({})
 
 config.plugins.push(
   new webpack.optimize.UglifyJsPlugin({
