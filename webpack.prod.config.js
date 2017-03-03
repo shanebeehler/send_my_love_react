@@ -6,7 +6,7 @@ config.plugins.push(
     "process.env": {
       "NODE_ENV":     JSON.stringify("production"),
       // "FB_APP_ID":    process.env.FB_APP_ID,
-      // "GEOCODE_KEY":  process.env.GEOCODE_KEY
+      "GEOCODE_KEY":  process.env.GEOCODE_KEY
     }
   })
 );
