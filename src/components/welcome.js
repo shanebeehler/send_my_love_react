@@ -7,8 +7,7 @@ const Welcome = (props) => {
       <div className="copy-background">
         <div className="copy">
           <p>
-            Inhale love.
-            Exhale love.
+            to pass the love
           </p>
         </div>
       </div>

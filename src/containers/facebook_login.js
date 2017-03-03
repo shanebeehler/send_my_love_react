@@ -7,7 +7,7 @@ import { facebookObject } from '../actions/index';
 // import { fb_app_id } from '../../server.js';
 //
 // const FB_APP_ID = fb_app_id;
-const FB_APP_ID = '1317906064955234';
+// const FB_APP_ID = '1317906064955234';
 
 class FacebookLogin extends React.Component {
   componentDidMount() {

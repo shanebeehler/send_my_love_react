@@ -8,10 +8,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --content-base build/ --host 0.0.0.0",
+    "start": "webpack-dev-server --content-base build/ --host 0.0.0.0",
     "build": "webpack",
-    "postinstall": "webpack -p",
-    "start": "node server.js"
+    "postinstall": "webpack -p"
   },
   "author": "Shane Beehler",
   "license": "ISC",
@@ -31,7 +30,6 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "@mars/heroku-js-runtime-env": "^3.0.0",
     "axios": "^0.15.3",
     "babel": "^6.23.0",
     "babel-core": "^6.23.1",
