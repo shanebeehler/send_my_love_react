@@ -10,7 +10,7 @@ export const FETCH_STATS     = 'FETCH_STATS';
 export const FETCH_PROFILE   = 'FETCH_PROFILE'
 
 // const API_KEY  = config.geocode_api_key;
-const GEOCODE_KEY = 'AIzaSyAoTnjUzK8T87ZAXpbfsDXqz9Skh8UlSzY';
+// const GEOCODE_KEY = 'AIzaSyAoTnjUzK8T87ZAXpbfsDXqz9Skh8UlSzY';
 const ROOT_URL = 'https://protected-escarpment-52671.herokuapp.com/posts/';
 const PROFILE_URL = 'https://protected-escarpment-52671.herokuapp.com/';
 
