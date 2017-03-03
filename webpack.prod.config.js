@@ -5,8 +5,8 @@ config.plugins.push(
   new webpack.DefinePlugin({
     "process.env": {
       "NODE_ENV":     JSON.stringify("production"),
-      "FB_APP_ID":    JSON.stringify(process.env.FB_APP_ID),
-      "GEOCODE_KEY":  JSON.stringify(process.env.GEOCODE_KEY)
+      "FB_APP_ID":    JSON.stringify("FB_APP_ID"),
+      "GEOCODE_KEY":  JSON.stringify("GEOCODE_KEY")
     }
   })
 );
