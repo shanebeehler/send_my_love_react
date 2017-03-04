@@ -33,7 +33,7 @@ export function createPost(props) {
 }
 
 export function showPosition(position) {
-  const request = axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&result_type=locality&key=${GEOCODE_KEY}`);
+  const request = axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=${GEOCODE_KEY}`);
   console.log(request);
   return {
     type: SHOW_POSITION,

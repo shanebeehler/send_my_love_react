@@ -8,7 +8,6 @@ import Maps from '../components/map';
 class Profile extends Component {
   componentDidMount() {
     this.props.fetchProfile(this.props.userId);
-    // setInterval(this.props.fetchPosts, 500);
   }
 
   render() {
