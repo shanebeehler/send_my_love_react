@@ -1,6 +1,6 @@
 import { SHOW_POSITION } from '../actions/index';
 
-export default function(state = "Location", action) {
+export default function(state = ["unknown", "unknown", { lat: 999999999, lng: 999999999 }], action) {
   switch(action.type) {
   case SHOW_POSITION:
     var city = "unknown";
@@ -23,6 +23,15 @@ export default function(state = "Location", action) {
     });
     var latlng = action.payload.data.results[0].geometry.location;
     var placeId = action.payload.data.results[0].place_id;
+    var object = action.payload.data.results;
+
+    for(var key in object){
+      if(object[3]){
+        latlng = object[3].geometry.location;
+        placeId = object[3].place_id;
+      }
+    };
+
     var location = [city, country, latlng, placeId];
     console.log(location);
     return location;
@@ -30,11 +39,3 @@ export default function(state = "Location", action) {
     return state;
   }
 }
-
-// .then(axios.spread((responseCity, responseCountry) => {
-//   var city = responseCity.data.results[0].address_components[0].long_name;
-//   var country = responseCountry.data.results[0].address_components[0].long_name;
-//   var address = `${city}, ${country}`;
-//   console.log(address);
-//   this.setState({location: address});
-// }));

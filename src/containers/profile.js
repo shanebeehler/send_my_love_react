@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchProfile } from '../actions/index';
-// import { Link } from 'react-router';
-import CurrentLoveDisplay from '../components/current_love_display';
-import Maps from '../components/map';
+import { connect }          from 'react-redux';
+import { fetchProfile }     from '../actions/index';
+import CurrentLoveDisplay   from '../components/current_love_display';
 
 class Profile extends Component {
   componentDidMount() {
@@ -14,7 +12,6 @@ class Profile extends Component {
     return (
       <div>
         <CurrentLoveDisplay profile={this.props.profile}/>
-        {/* <Maps profile={this.props.profile}/> */}
       </div>
     );
   }

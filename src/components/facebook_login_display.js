@@ -11,7 +11,7 @@ const FacebookLoginDisplay = (props) => {
         data-show-faces="false"
         data-auto-logout-link="true"
         >
-      </div>    
+      </div>
     </div>
   );
 }

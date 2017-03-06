@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchPosts } from '../actions/index';
-import { Link } from 'react-router';
-import PostsDisplay from '../components/posts_display';
+import { connect }          from 'react-redux';
+import { fetchPosts }       from '../actions/index';
+import { Link }             from 'react-router';
+import PostsDisplay         from '../components/posts_display';
 
 class PostsIndex extends Component {
   componentDidMount() {

@@ -7,7 +7,10 @@ const Welcome = (props) => {
       <div className="copy-background">
         <div className="copy">
           <p>
-            to pass the love
+            Share your name and location
+            to join in on the love chain.
+
+            A simple daily connection.
           </p>
         </div>
       </div>

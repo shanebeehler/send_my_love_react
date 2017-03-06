@@ -4,37 +4,7 @@ html, body {
   box-sizing: border-box;
   min-height: 100%;
   width: 100%;
-  // background-color: black;
-  // background-image: url('../../assets/love-background.jpg');
-  // background-repeat: no-repeat;
-  // background-size: cover;
 }
-
-// #container {
-//   height: 100%;
-//   // background-color: black;
-//   position: relative;
-//
-//   > div {
-//     position: relative;
-//     height: 100%;
-//     top: 50%;
-//     -webkit-transform: translateY(-50%);
-//         -ms-transform: translateY(-50%);
-//             transform: translateY(-50%);
-//   }
-// }
-//
-// h3 {
-//   color: #7A378B;
-//   font-family: cursive;
-//   font-size: 8em;
-//   text-align: center;
-//   font-weight: 100;
-//   margin: .5em 0 .5em 0;
-//   display: none;
-// }
-
 
 .love-chain {
   list-style: none;
@@ -67,11 +37,4 @@ html, body {
 
     font-weight: 200;
   }
-}
-
-.button, a {
-  text-decoration: none;
-  font-weight: 100;
-  font-size: 1.5em;
-  border: none;
 }

@@ -1,4 +1,12 @@
 .fb-style {
-  float: right;
-  margin: 0;
+  float: left;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+.button, a {
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 1.5em;
+  border: none;
 }

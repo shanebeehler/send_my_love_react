@@ -1,9 +1,11 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React                  from 'react';
+import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
-import FacebookLoginDisplay from '../components/facebook_login_display';
-import { facebookObject } from '../actions/index';
+import FacebookLoginDisplay   from '../components/facebook_login_display';
+import { facebookObject }     from '../actions/index';
+
 const FB_APP_ID = '1317906064955234';
+// safe to share
 
 class FacebookLogin extends React.Component {
   componentDidMount() {
@@ -22,8 +24,9 @@ class FacebookLogin extends React.Component {
           FB.api('/me', {fields: ['name', 'email']},(response) => {
             this.props.facebookObject(response);
           });
-        } else {
-          const name = { name: "Name" }
+        }
+        else {
+          const name = { name: "Login to share your name" }
           this.props.facebookObject(name);
           console.log('User cancelled login or did not fully authorize.');
         }

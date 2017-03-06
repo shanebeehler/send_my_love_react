@@ -1,10 +1,10 @@
 import React from 'react';
 
 const CurrentLoveDisplay = ({profile}) => {
-  if(profile !== null) {
+  if (profile !== null) {
     var current_love = profile.current_love
 
-    if(current_love[2] != null) {
+    if (current_love[2] != null) {
       return (
         <div className="profile">
           <div>
