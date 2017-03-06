@@ -1,7 +1,7 @@
 import React          from 'react';
 import { connect }    from 'react-redux';
 import { createPost } from '../actions/index';
-import {hashHistory}  from 'react-router';
+import {browserHistory}  from 'react-router';
 import axios          from 'axios';
 
 class PostsNew extends React.Component {
@@ -19,7 +19,7 @@ class PostsNew extends React.Component {
   })
   .then(function (response) {
     console.log(response);
-    hashHistory.push('/profile');
+    browserHistory.push('/profile');
   })
   .catch(function (error) {
     console.log(error);
