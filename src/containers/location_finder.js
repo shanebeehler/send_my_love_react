@@ -5,13 +5,9 @@ import { showPosition }                from '../actions/index';
 import LocationDisplay                 from '../components/location_display';
 import PostsNew                        from './posts_new';
 import Welcome                         from '../components/welcome';
-import FacebookLoginDisplay            from '../components/facebook_login_display';
-
+import FacebookLogin                   from '../containers/facebook_login';
 
 class LocationFinder extends Component {
-  // componentDidMount() {
-  //   this.fetchLocation();
-  // }
 
   fetchLocation() {
     if (navigator.geolocation) {
@@ -20,15 +16,24 @@ class LocationFinder extends Component {
   }
 
   render() {
-    if (this.props.facebookObject === "Login to share your name") {
+    if (this.props.facebookObject === "logged out") {
       return (
-        <Welcome />
+        <div>
+          <FacebookLogin loggedIn={false} />
+          <Welcome />
+        </div>
+      );
+    }
+    else if (this.props.location[0] === "unknown") {
+      return (
+        <div>
+          <button className="location-button logout"
+                  onClick={this.fetchLocation.bind(this)}>Share Location</button>
+          <Welcome />
+        </div>
       );
     }
     else {
-      if (this.props.location[0] === "unknown") {
-        this.fetchLocation();
-      }
       return(
         <div className="form-wrap">
           <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} />
@@ -38,10 +43,10 @@ class LocationFinder extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) :stateProps {
   return {
     facebookObject: state.facebookObject,
-    location: state.location
+    location:       state.location
   }
 }
 

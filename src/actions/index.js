@@ -51,7 +51,11 @@ export function fetchStats() {
 }
 
 export function fetchProfile(userId) {
-  const request = axios.get(`${PROFILE_URL}${userId}`);
+  var request = userId;
+
+  if (userId != "logged out") {
+    request = axios.get(`${PROFILE_URL}${userId}`);
+  }
 
   return {
     type:    FETCH_PROFILE,

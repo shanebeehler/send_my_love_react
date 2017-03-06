@@ -1,14 +1,41 @@
 import React                  from 'react';
 import { connect }            from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, createStore, combineReducers, applyMiddleware } from 'redux';
 import FacebookLoginDisplay   from '../components/facebook_login_display';
-import { facebookObject }     from '../actions/index';
+import { facebookObject, fetchProfile }     from '../actions/index';
+import {browserHistory, Router}          from 'react-router';
+import { routerMiddleware, push } from 'react-router-redux'
+// import reducers from '../reducers';
+//
+// const middleware = routerMiddleware(browserHistory)
+// const store = createStore(
+//   reducers,
+//   applyMiddleware(middleware)
+// )
 
 const FB_APP_ID = '1317906064955234';
 // safe to share
 
 class FacebookLogin extends React.Component {
+
+
+  // loginButton(status) {
+  //   if (status === 'connected') {
+  //     return
+  //       <div>
+  //         <button className="fb-button" onClick={this.logout.bind(this)}>Continue with Facebook</button>
+  //       </div>;
+  //   }
+  //   else {
+  //     return
+  //       <div>
+  //         <button className="fb-button" onClick={this.login.bind(this)}>Continue with Facebook</button>
+  //       </div>;
+  //   }
+  // }
+
   componentDidMount() {
+
     window.fbAsyncInit = function() {
       FB.init({
         appId      : FB_APP_ID,
@@ -26,11 +53,16 @@ class FacebookLogin extends React.Component {
           });
         }
         else {
-          const name = { name: "Login to share your name" }
+          const name = { name: "logged out" }
           this.props.facebookObject(name);
           console.log('User cancelled login or did not fully authorize.');
         }
       });
+
+      // FB.getLoginStatus(function(response) {
+      //   this.loginButton(response.status).bind(this);
+      // });
+
     }.bind(this);
 
     // Load the SDK asynchronously
@@ -43,16 +75,44 @@ class FacebookLogin extends React.Component {
     }(document, 'script', 'facebook-jssdk'));
   }
 
+
+  login() {
+    FB.login((response) => {
+    }, {scope: 'public_profile,email'})
+  }
+
+  logout() {
+    FB.logout((response) => {
+      this.props.fetchProfile("logged out");      
+      this.props.facebookObject("logged out");
+        browserHistory.push('/');
+    });
+  }
+
   render() {
-    return(
-      <FacebookLoginDisplay />
-    );
+    // return(
+    //   <FacebookLoginDisplay />
+    // );
+    if (this.props.loggedIn === false) {
+      return (
+        <div>
+          <button className="fb-button" onClick={this.login.bind(this)}>Continue with Facebook</button>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div>
+          <button className="fb-button" onClick={this.logout.bind(this)}>Sign Out</button>
+        </div>
+      );
+    }
   }
 }
 
 function mapDispatchToProps(dispatch) {
 
-  return bindActionCreators({ facebookObject: facebookObject }, dispatch)
+  return bindActionCreators({ facebookObject: facebookObject, fetchProfile: fetchProfile }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(FacebookLogin);

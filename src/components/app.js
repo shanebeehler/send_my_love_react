@@ -7,7 +7,7 @@ const App = (props) => {
   return (
     <div>
       <NavBar />
-      <FacebookLogin />
+      {/* <FacebookLogin /> */}
       <div className="app">
         {props.children}
       </div>
