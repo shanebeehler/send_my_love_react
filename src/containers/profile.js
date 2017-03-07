@@ -13,7 +13,7 @@ class Profile extends Component {
 
   render() {
     if (this.props.profile === "logged out") {
-      return(
+      return (
         <div>
           Must be logged in.
         </div>

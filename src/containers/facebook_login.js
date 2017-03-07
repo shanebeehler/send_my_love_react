@@ -1,38 +1,14 @@
 import React                  from 'react';
 import { connect }            from 'react-redux';
-import { bindActionCreators, createStore, combineReducers, applyMiddleware } from 'redux';
+import { bindActionCreators } from 'redux';
 import FacebookLoginDisplay   from '../components/facebook_login_display';
 import { facebookObject, fetchProfile }     from '../actions/index';
 import {browserHistory, Router}          from 'react-router';
-import { routerMiddleware, push } from 'react-router-redux'
-// import reducers from '../reducers';
-//
-// const middleware = routerMiddleware(browserHistory)
-// const store = createStore(
-//   reducers,
-//   applyMiddleware(middleware)
-// )
 
 const FB_APP_ID = '1317844501628057';
 // safe to share
 
 class FacebookLogin extends React.Component {
-
-
-  // loginButton(status) {
-  //   if (status === 'connected') {
-  //     return
-  //       <div>
-  //         <button className="fb-button" onClick={this.logout.bind(this)}>Continue with Facebook</button>
-  //       </div>;
-  //   }
-  //   else {
-  //     return
-  //       <div>
-  //         <button className="fb-button" onClick={this.login.bind(this)}>Continue with Facebook</button>
-  //       </div>;
-  //   }
-  // }
 
   componentDidMount() {
 
