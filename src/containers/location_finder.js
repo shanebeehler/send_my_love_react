@@ -16,19 +16,35 @@ class LocationFinder extends Component {
   }
 
   render() {
-    if (this.props.facebookObject === "logged out") {
+    if (this.props.facebookObject.name === "logged out" && this.props.location[0] === "unknown") {
       return (
         <div>
           <FacebookLogin loggedIn={false} />
+          <button className="location-button logout"
+                onClick={this.fetchLocation.bind(this)}>Share Location</button>
           <Welcome />
         </div>
       );
     }
-    else if (this.props.location[0] === "unknown") {
+    else if (this.props.facebookObject.name !== "logged out" && this.props.location[0] === "unknown") {
       return (
         <div>
+          <label>
+            {this.props.facebookObject.name}
+          </label>
           <button className="location-button logout"
                   onClick={this.fetchLocation.bind(this)}>Share Location</button>
+          <Welcome />
+        </div>
+      );
+    }
+    else if (this.props.facebookObject.name === "logged out" && this.props.location[0] != "unknown") {
+      return (
+        <div>
+          <FacebookLogin loggedIn={false} />
+          <label>
+            {this.props.location[0]}, {this.props.location[1]}
+          </label>
           <Welcome />
         </div>
       );
