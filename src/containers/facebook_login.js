@@ -13,7 +13,7 @@ import { routerMiddleware, push } from 'react-router-redux'
 //   applyMiddleware(middleware)
 // )
 
-const FB_APP_ID = '1317906064955234';
+const FB_APP_ID = '1317844501628057';
 // safe to share
 
 class FacebookLogin extends React.Component {
@@ -83,7 +83,7 @@ class FacebookLogin extends React.Component {
 
   logout() {
     FB.logout((response) => {
-      this.props.fetchProfile("logged out");      
+      this.props.fetchProfile("logged out");
       this.props.facebookObject("logged out");
         browserHistory.push('/');
     });
