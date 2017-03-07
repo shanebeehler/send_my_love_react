@@ -60,7 +60,7 @@ class FacebookLogin extends React.Component {
   logout() {
     FB.logout((response) => {
       this.props.fetchProfile("logged out");
-      this.props.facebookObject("logged out");
+      this.props.facebookObject({name: "logged out"});
         browserHistory.push('/');
     });
   }

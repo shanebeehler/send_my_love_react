@@ -16,7 +16,7 @@ class LocationFinder extends Component {
   }
 
   render() {
-    if (this.props.facebookObject.name === "logged out" && this.props.location[0] === "unknown") {
+    if (this.props.facebookObject.name === "logged out" || this.props.facebookObject === "logged out" && this.props.location[0] === "unknown") {
       return (
         <div>
           <FacebookLogin loggedIn={false} />
