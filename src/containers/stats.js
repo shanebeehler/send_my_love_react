@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchStats } from '../actions/index';
-// import { Link } from 'react-router';
-import StatsDisplay from '../components/stats_display';
+import { connect }          from 'react-redux';
+import { fetchStats }       from '../actions/index';
+import StatsDisplay         from '../components/stats_display';
 
 class Stats extends Component {
   componentDidMount() {
