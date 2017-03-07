@@ -13,8 +13,10 @@ class Profile extends Component {
 
   render() {
     if (this.props.profile === "logged out") {
-      return (
-        <FacebookLogin loggedIn={false} />
+      return(
+        <div>
+          Must be logged in.
+        </div>
       );
     }
     else {
