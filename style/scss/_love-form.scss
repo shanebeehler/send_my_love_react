@@ -6,10 +6,8 @@
 }
 
 .love-form {
-
-  div, button {
-    margin: 1em 4em;
-  }
+  width: 85%;
+  margin: auto;
 
   div {
     text-align: center;
@@ -19,34 +17,16 @@
     display: block;
     font-weight: 200;
     font-size: 1.5em;
-    margin-bottom: .2em;
+    line-height: 2.2em;
 
-    &:first-child {
-      padding-top: 1em;
-    }
     &:nth-child(2) {
       font-family: 'Courgette';
       color: #EF5C48;
       font-size: 1em;
-      padding-left: 1em;
     }
-  }
 
-  button, input, .button {
-    font-size: 1.5em;
-    margin: .5em 0 0 0;
-    background-color: #EF5C48;
-    color: white;
-    padding: .1em .6em;
-    min-width: 100%;
-    margin-bottom: .4em;
-    border-radius: 2px;
-    font-family: 'Courgette';
-
-    &:hover {
-      background-color: white;
-      color: #EF5C48;
-      cursor: pointer;
+    &:nth-child(3) {
+      margin-bottom: 1em;
     }
   }
 }

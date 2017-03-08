@@ -18,41 +18,54 @@ class LocationFinder extends Component {
   render() {
     if (this.props.facebookObject.name === "logged out" || this.props.facebookObject === "logged out" && this.props.location[0] === "unknown") {
       return (
-        <div>
+        <div className="love-form">
           <FacebookLogin loggedIn={false} />
-          <button className="location-button logout"
+          <label>in</label>
+          <button className="location-button"
                 onClick={this.fetchLocation.bind(this)}>Share Location</button>
+          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
           <Welcome />
         </div>
       );
     }
     else if (this.props.facebookObject.name !== "logged out" && this.props.location[0] === "unknown") {
       return (
-        <div>
+        <div className="love-form">
           <label>
             {this.props.facebookObject.name}
           </label>
-          <button className="location-button logout"
+          <label>in</label>
+          <button className="location-button"
                   onClick={this.fetchLocation.bind(this)}>Share Location</button>
+          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
           <Welcome />
         </div>
       );
     }
     else if (this.props.facebookObject.name === "logged out" && this.props.location[0] != "unknown") {
       return (
-        <div>
+        <div className="love-form">
           <FacebookLogin loggedIn={false} />
+          <label>in</label>
           <label>
             {this.props.location[0]}, {this.props.location[1]}
           </label>
+          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
           <Welcome />
         </div>
       );
     }
     else {
       return(
-        <div className="form-wrap">
-          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} />
+        <div className="love-form">
+          <label>
+            {this.props.facebookObject.name}
+          </label>
+          <label>in</label>
+          <label>
+            {this.props.location[0]}, {this.props.location[1]}
+          </label>
+          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={false}/>
         </div>
       );
     }

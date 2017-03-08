@@ -27,18 +27,20 @@ class PostsNew extends React.Component {
   }
 
   render() {
-    return (
-        <form className="love-form" onSubmit={this.handleSubmit.bind(this)}>
-          <label>
-            {this.props.facebookObject.name}
-          </label>
-          <label>in</label>
-          <label>
-            {this.props.location[0]}, {this.props.location[1]}
-          </label>
-          <input className="button" type="submit" value="pass the love"/>
+    if (this.props.isDisabled) {
+      return (
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <button className="button" type="submit" value="send my love" disabled>Send My Love</button>
         </form>
-    );
+      );
+    }
+    else {
+      return (
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <button className="button" type="submit" value="send my love">Send My Love</button>
+        </form>
+      );
+    }
   }
 }
 

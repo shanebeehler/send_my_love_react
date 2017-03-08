@@ -1,32 +1,37 @@
-.fb-style {
-  float: left;
-  margin-left: 10%;
-  margin-top: 10%;
-}
-
-.fb-button {
-  background-color: #4267B2;
-  color: white;
-  font-size: 1.5rem;
-  border-style: none;
-  border-radius: 2px;
-  width: 85%;
-  font-weight: 500;
-}
-
-.location-button {
-  background-color: #EF5C48;
-  font-size: 26px;
-  font-family: 'Courgette';
-  width: 85%;
-  border-radius: 2px;
-  color: white;
-  border-style: none;
-}
-
-.button, a {
+a {
   text-decoration: none;
   font-weight: 100;
   font-size: 1.5em;
   border: none;
+}
+
+button {
+  font-size: 1.5em;
+  // margin: 0;
+  background-color: #EF5C48;
+  color: white;
+  // padding: .1em .6em;
+  min-width: 100%;
+  // margin-bottom: .4em;
+  border-radius: 4px;
+  font-family: 'Courgette';
+  border-style: none;
+  line-height: 2em;
+}
+
+.location-button {
+  margin-bottom: 1em;
+}
+
+.fb-button {
+  // font-size: 1.3em;
+  font-family: sans-serif;
+  background-color: #4267B2;
+  color: white;
+  border-radius: 2px;
+  font-weight: 300;
+  &:hover {
+    background-color: #4267B2;
+    color: white;
+  }
 }
