@@ -10,8 +10,6 @@ import FacebookLogin                   from '../containers/facebook_login';
 import ReactTransitions                from 'react-transitions';
 // import '../../node_modules/react-transitions/dist/animations.css';
 
-const transition = "rotate-fold-left-move-from-right-fade";
-
 class LocationFinder extends Component {
 
   fetchLocation() {
@@ -21,31 +19,21 @@ class LocationFinder extends Component {
   }
 
   render() {
-    if (this.props.facebookObject.name === "logged out" && this.props.location[0] === "unknown") {
+    if (this.props.facebookObject.name === "logged out" || this.props.facebookObject === "logged out" && this.props.location[0] === "unknown") {
       return (
         <div className="love-form">
-          <label>
-            <ReactTransitions
-              transition={ transition }
-              width={ "100%" }
-              height={ "60px" }
-            >
-              <div key="1">
-                <FacebookLogin loggedIn={false} />
-              </div>
-            </ReactTransitions>
+          <ReactTransitions
+            transition={ "fade-move-from-top" }
+            width={ "inherent" }
+            height={ "60px" }
+          >
+          <label key="2">
+            <FacebookLogin loggedIn={false} />
           </label>
-
+          </ReactTransitions>
           <label>in</label>
-
-            <label>
-              <div>
-                <button className="location-button"
-                        onClick={this.fetchLocation.bind(this)}
-                        disabled>Share Location</button>
-              </div>
-            </label>
-
+          <button className="location-button"
+                onClick={this.fetchLocation.bind(this)}>Share Location</button>
           <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
           <Welcome />
         </div>
@@ -54,30 +42,30 @@ class LocationFinder extends Component {
     else if (this.props.facebookObject.name !== "logged out" && this.props.location[0] === "unknown") {
       return (
         <div className="love-form">
-          <label>
-            <ReactTransitions
-              transition={ transition }
-              width={ "100%" }
-              height={ "60px" }
-            >
-              <div key="3">
-                {this.props.facebookObject.name}
-              </div>
-            </ReactTransitions>
+          <ReactTransitions
+            transition={ "fade-move-from-top" }
+            width={ "inherent" }
+            height={ "60px" }
+          >
+          <label key="1">
+            {this.props.facebookObject.name}
           </label>
-
+          </ReactTransitions>
+          <label>in</label>
+          <button className="location-button"
+                  onClick={this.fetchLocation.bind(this)}>Share Location</button>
+          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
+          <Welcome />
+        </div>
+      );
+    }
+    else if (this.props.facebookObject.name === "logged out" && this.props.location[0] != "unknown") {
+      return (
+        <div className="love-form">
+          <FacebookLogin loggedIn={false} />
           <label>in</label>
           <label>
-            <ReactTransitions
-              transition={ transition }
-              width={ "100%" }
-              height={ "60px" }
-              >
-                <div key="9">
-                  <button className="location-button"
-                          onClick={this.fetchLocation.bind(this)}>Share Location</button>
-                </div>
-            </ReactTransitions>
+            {this.props.location[0]}, {this.props.location[1]}
           </label>
           <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
           <Welcome />
@@ -87,24 +75,12 @@ class LocationFinder extends Component {
     else {
       return(
         <div className="love-form">
-            <label>
-              <div>
-                {this.props.facebookObject.name}
-              </div>
-            </label>
-
-          <label>in</label>
-
           <label>
-            <ReactTransitions
-              transition={ transition }
-              width={ "inherent" }
-              height={ "60px" }
-            >
-              <div key="8">
-                {this.props.location[0]}, {this.props.location[1]}
-              </div>
-            </ReactTransitions>
+            {this.props.facebookObject.name}
+          </label>
+          <label>in</label>
+          <label>
+            {this.props.location[0]}, {this.props.location[1]}
           </label>
           <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={false}/>
         </div>

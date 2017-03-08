@@ -6,7 +6,7 @@ a {
 }
 
 button {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   // margin: 0;
   background-color: #EF5C48;
   color: white;
@@ -16,7 +16,11 @@ button {
   border-radius: 4px;
   font-family: 'Courgette';
   border-style: none;
-  line-height: 2em;
+  height: 50px;
+
+  &:disabled {
+    background: #dddddd;
+  }
 }
 
 .location-button {
