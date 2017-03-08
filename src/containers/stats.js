@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { fetchStats }       from '../actions/index';
 import StatsDisplay         from '../components/stats_display';
+import Loading              from 'react-loading';
 
 class Stats extends Component {
   componentDidMount() {
@@ -10,17 +11,26 @@ class Stats extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <div className="stats">
-          <StatsDisplay title="total distance(km)" stats={this.props.stats} count={6}/>
-          <StatsDisplay title="times passed"       stats={this.props.stats} count={2}/>
-          <StatsDisplay title="total people"       stats={this.props.stats} count={5}/>
-          <StatsDisplay title="total cities"       stats={this.props.stats} count={0}/>
-          <StatsDisplay title="total countries"    stats={this.props.stats} count={1}/>
+    if (this.props.stats) {
+      return (
+        <div>
+          <div className="stats">
+            <StatsDisplay title="total distance(km)" stats={this.props.stats} count={6}/>
+            <StatsDisplay title="times passed"       stats={this.props.stats} count={2}/>
+            <StatsDisplay title="total people"       stats={this.props.stats} count={5}/>
+            <StatsDisplay title="total cities"       stats={this.props.stats} count={0}/>
+            <StatsDisplay title="total countries"    stats={this.props.stats} count={1}/>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+      return (
+        <div className="stats">
+          <Loading type='spinning-bubbles' color='#EF5C48' />
+        </div>      
+      );
+    }
   }
 }
 
