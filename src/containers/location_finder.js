@@ -10,7 +10,7 @@ import FacebookLogin                   from '../containers/facebook_login';
 import ReactTransitions                from 'react-transitions';
 // import '../../node_modules/react-transitions/dist/animations.css';
 
-const transition = "rotate-fold-left-move-from-right-fade";
+const transition = "rotate-cube-top-out-rotate-cube-top-in";
 
 class LocationFinder extends Component {
 
