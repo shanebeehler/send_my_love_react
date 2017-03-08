@@ -5,7 +5,6 @@ import { bindActionCreators }          from 'redux';
 import { showPosition }                from '../actions/index';
 import LocationDisplay                 from '../components/location_display';
 import PostsNew                        from './posts_new';
-import Welcome                         from '../components/welcome';
 import FacebookLogin                   from '../containers/facebook_login';
 import ReactTransitions                from 'react-transitions';
 // import '../../node_modules/react-transitions/dist/animations.css';
@@ -47,7 +46,6 @@ class LocationFinder extends Component {
             </label>
 
           <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
-          <Welcome />
         </div>
       );
     }
@@ -80,7 +78,6 @@ class LocationFinder extends Component {
             </ReactTransitions>
           </label>
           <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
-          <Welcome />
         </div>
       );
     }

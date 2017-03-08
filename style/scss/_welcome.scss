@@ -1,8 +1,17 @@
+.welcomebg {
+  // background-color: #EF5C48;
+}
+
 .welcome {
-  margin-top: 20%;
+  width: 85%;
+  margin: auto;
+  font-size: 1.4em;
 
   .copy-background {
-    font-weight: 200;
+    font-weight: 400;
+      span {
+        color: #EF5C48;
+      }
 
     .copy {
 
