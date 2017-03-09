@@ -27,6 +27,30 @@ button {
   margin-bottom: 1em;
 }
 
+.swipe-buttons {
+
+  .swipe {
+    display: inline-block;
+    min-width: 5px;
+    background-color: white;
+    color: #EF5C48;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+}
+
+// @media screen and (max-width: 770px) {
+//   .swipe-buttons {
+//     display: none;
+//   }
+// }
+
 .fb-button {
   // font-size: 1.3em;
   font-family: sans-serif;

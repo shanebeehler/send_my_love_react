@@ -1,4 +1,5 @@
-import React      from 'react';
+import React  from 'react';
+import {Link} from 'react-router';
 
 const Welcome = (props) => {
 
@@ -16,9 +17,10 @@ const Welcome = (props) => {
         </p>
 
         <p>
-          Join the global love train         
+          Join the global love train
         </p>
       </div>
+      <Link to="/sendlove" activeClassName="active"><i className="fa fa-angle-down" aria-hidden="true"></i></Link>
     </div>
   );
 }

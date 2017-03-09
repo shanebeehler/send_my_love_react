@@ -3,7 +3,7 @@ import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FacebookLoginDisplay   from '../components/facebook_login_display';
 import { facebookObject, fetchProfile }     from '../actions/index';
-import {browserHistory, Router}          from 'react-router';
+import {hashHistory, Router}          from 'react-router';
 
 const FB_APP_ID = '1317844501628057';
 // safe to share
@@ -61,7 +61,7 @@ class FacebookLogin extends React.Component {
     FB.logout((response) => {
       this.props.fetchProfile("logged out");
       this.props.facebookObject({name: "logged out"});
-        browserHistory.push('/');
+        hashHistory.push('/');
     });
   }
 

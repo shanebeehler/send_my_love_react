@@ -13,7 +13,8 @@ class Stats extends Component {
   render() {
     if (this.props.stats) {
       return (
-        <div>
+        <div className="stats-display">
+          <h2>Global Love Stats</h2>
           <div className="stats">
             <StatsDisplay title="total distance(km)" stats={this.props.stats} count={6}/>
             <StatsDisplay title="times passed"       stats={this.props.stats} count={2}/>
@@ -28,7 +29,7 @@ class Stats extends Component {
       return (
         <div className="stats">
           <Loading type='spinning-bubbles' color='#EF5C48' />
-        </div>      
+        </div>
       );
     }
   }

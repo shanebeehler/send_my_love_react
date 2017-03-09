@@ -6,9 +6,9 @@ import LocationFinder       from '../containers/location_finder';
 const App = (props) => {
   return (
     <div>
-      <NavBar />
       {/* <FacebookLogin /> */}
       <div className="app">
+        <NavBar />  
         {props.children}
       </div>
     </div>

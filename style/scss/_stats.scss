@@ -1,10 +1,20 @@
+.stats-display {
+  margin-top: 4em;
+
+  h2 {
+    font-weight: 400;
+    font-size: 2em;
+    color: #EF5C48;
+  }
+}
+
 .stats {
-  text-align: center;
-  font-weight: 200;
+  // text-align: center;
+  font-weight: 400;
   text-transform: capitalize;
   max-width: 85%;
   margin: auto;
-  margin-top: -18px;
+  margin-top: -16px;
 
   div {
     display: inline-block;
@@ -18,7 +28,7 @@
     }
 
     &:first-child, &:nth-child(2), &:nth-child(3) {
-      border-bottom: 1px solid black;
+      // border-bottom: 1px solid black;
     }
 
     p {
@@ -28,6 +38,7 @@
       }
       &:last-child {
         // background-color: black;
+        font-weight: 200;
         color: #EF5C48;
         font-size: 2em;
         width: 30%;
