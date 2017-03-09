@@ -10,19 +10,20 @@ const CurrentLoveDisplay = ({profile}) => {
           <div>
             <p className="fancy">inhale love from</p>
             <p>{current_love[0].name}</p>
-            <p className="fancy">in</p>
+            <div>
+              {Math.round(current_love[0].distance_from_last_city)} KM
+            </div>
+            <p className="fancy in">away in</p>
             <p>{current_love[0].city}, {current_love[0].country}</p>
           </div>
 
-          {/* <div>
-            {Math.round(current_love[0].distance_from_last_city)}
-          </div> */}
+
 
           <div>
             <p className="fancy">exhale love to</p>
-            <p>{current_love[0].name}</p>
+            <p>{current_love[2].name}</p>
             <p className="fancy">in</p>
-            <p>{current_love[0].city}, {current_love[0].country}</p>
+            <p>{current_love[2].city}, {current_love[2].country}</p>
           </div>
         </div>
       )
@@ -33,7 +34,10 @@ const CurrentLoveDisplay = ({profile}) => {
           <div>
             <p className="fancy">inhale love from</p>
             <p>{current_love[0].name}</p>
-            <p className="fancy">in</p>
+            <div>
+              {Math.round(current_love[0].distance_from_last_city)} KM
+            </div>
+            <p className="fancy in">away in</p>
             <p>{current_love[0].city}, {current_love[0].country}</p>
           </div>
 

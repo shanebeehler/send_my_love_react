@@ -78,7 +78,7 @@ class FacebookLogin extends React.Component {
     }
     else {
       return (
-        <div>
+        <div className="logout">
           <button className="fb-button" onClick={this.logout.bind(this)}>Sign Out</button>
         </div>
       );
