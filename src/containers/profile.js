@@ -3,21 +3,23 @@ import { connect }          from 'react-redux';
 import { fetchProfile }     from '../actions/index';
 import CurrentLoveDisplay   from '../components/current_love_display';
 import FacebookLogin        from '../containers/facebook_login';
+import { hashHistory }      from 'react-router';
 
 class Profile extends Component {
   componentDidMount() {
-    if (this.props.facebookObject != "logged out") {
+    if (this.props.facebookObject.name != "logged out") {
       this.props.fetchProfile(this.props.facebookObject.id);
+    }
+    else {
+      hashHistory.push('/');
+      alert("Please Login");
     }
   }
 
+
   render() {
     if (this.props.profile === "logged out") {
-      return (
-        <div>
-          Must be logged in.
-        </div>
-      );
+      return <div>Log In</div>
     }
     else {
       return (
