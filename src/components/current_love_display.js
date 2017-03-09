@@ -63,6 +63,15 @@ const CurrentLoveDisplay = ({profile}) => {
           </div>
 
           <div className="card">YOU in {current_love[1].city}</div>
+
+          <div>
+            <p><i className="fa fa-heart heart" aria-hidden="true"></i></p>
+            <p className="inhale">exhale the love</p>
+            <p><i className="fa fa-heart heart" aria-hidden="true"></i></p>
+            <div className="card">
+              to the whole world
+            </div>
+          </div>
         </div>
       )
     }
