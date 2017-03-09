@@ -12,13 +12,12 @@ class Profile extends Component {
     }
     else {
       hashHistory.push('/');
-      alert("Please Login");
     }
   }
 
 
   render() {
-    if (this.props.profile === "logged out") {
+    if (this.props.facebookObject.name === "logged out") {
       return <div>Log In</div>
     }
     else {
