@@ -20,6 +20,7 @@ class PostsNew extends React.Component {
   .then(function (response) {
     console.log(response);
     hashHistory.push('/profile');
+    alert("Love Sent!")
   })
   .catch(function (error) {
     console.log(error);
