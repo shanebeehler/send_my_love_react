@@ -17,10 +17,13 @@ class LocationFinder extends Component {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(this.props.showPosition);
     }
+    else {
+      alert("Location Unavailable. Make sure Location Services are on!")
+    }
   }
 
   render() {
-    if (this.props.facebookObject.name === "logged out" && this.props.location[0] === "unknown") {
+    if (this.props.facebookObject.name === "logged out") {
       return (
         <div className="love-form">
           <label>
