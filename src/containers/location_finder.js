@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM                        from 'react-dom';
 import { connect }                     from 'react-redux';
 import { bindActionCreators }          from 'redux';
-import { showPosition }                from '../actions/index';
+import { showPosition, fetchProfile }  from '../actions/index';
 import LocationDisplay                 from '../components/location_display';
 import PostsNew                        from './posts_new';
 import FacebookLogin                   from '../containers/facebook_login';
@@ -12,6 +12,12 @@ import ReactTransitions                from 'react-transitions';
 const transition = "rotate-cube-bottom-out-rotate-cube-bottom-in";
 
 class LocationFinder extends Component {
+
+  componentDidUpdate() {
+    if (this.props.facebookObject.name !== "logged out" && this.props.profile === "logged out") {
+      this.props.fetchProfile(this.props.facebookObject.id);
+    }
+  }
 
   fetchLocation() {
     if (navigator.geolocation) {
@@ -23,6 +29,8 @@ class LocationFinder extends Component {
   }
 
   render() {
+    var now = new Date;
+    now = now.getTime();
     if (this.props.facebookObject.name === "logged out") {
       return (
         <div className="love-form">
@@ -53,36 +61,71 @@ class LocationFinder extends Component {
       );
     }
     else if (this.props.facebookObject.name !== "logged out" && this.props.location[0] === "unknown") {
-      return (
-        <div className="love-form">
-          <label>
-            <ReactTransitions
-              transition={ transition }
-              width={ "100%" }
-              height={ "60px" }
-            >
-              <div key="3">
-                {this.props.facebookObject.name}
-              </div>
-            </ReactTransitions>
-          </label>
-
-          <label>in</label>
-          <label>
-            <ReactTransitions
-              transition={ transition }
-              width={ "100%" }
-              height={ "60px" }
+      if (this.props.profile !== "logged out" && this.props.profile.current_love[1].milliseconds > now) {
+        var milliseconds = this.props.profile.current_love[1].milliseconds;
+        return (
+          <div className="love-form">
+            <label>
+              <ReactTransitions
+                transition={ transition }
+                width={ "100%" }
+                height={ "60px" }
               >
-                <div key="9">
-                  <button className="location-button"
-                          onClick={this.fetchLocation.bind(this)}>Share Location</button>
+                <div key="3">
+                  {this.props.facebookObject.name}
                 </div>
-            </ReactTransitions>
-          </label>
-          <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
-        </div>
-      );
+              </ReactTransitions>
+            </label>
+  {/*
+            <label>in</label> */}
+            <label>
+              <ReactTransitions
+                transition={ transition }
+                width={ "100%" }
+                height={ "60px" }
+                >
+                  <div key="9">
+                    Send Love again in {Math.round((milliseconds - now) / 3600000)} hours.
+                  </div>
+              </ReactTransitions>
+            </label>
+            <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
+          </div>
+        );
+      }
+
+      else {
+        return (
+          <div className="love-form">
+            <label>
+              <ReactTransitions
+                transition={ transition }
+                width={ "100%" }
+                height={ "60px" }
+              >
+                <div key="3">
+                  {this.props.facebookObject.name}
+                </div>
+              </ReactTransitions>
+            </label>
+
+            <label>in</label>
+            <label>
+              <ReactTransitions
+                transition={ transition }
+                width={ "100%" }
+                height={ "60px" }
+                >
+                  <div key="9">
+                    <button className="location-button"
+                            onClick={this.fetchLocation.bind(this)}>Share Location</button>
+                  </div>
+              </ReactTransitions>
+            </label>
+            <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
+          </div>
+        );
+      }
     }
     else {
       return(
@@ -116,12 +159,13 @@ class LocationFinder extends Component {
 function mapStateToProps(state, ownProps) :stateProps {
   return {
     facebookObject: state.facebookObject,
-    location:       state.location
+    location:       state.location,
+    profile:        state.profile
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ showPosition: showPosition }, dispatch)
+  return bindActionCreators({ showPosition: showPosition, fetchProfile: fetchProfile }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LocationFinder);
