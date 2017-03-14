@@ -9,7 +9,9 @@ import { hashHistory }      from 'react-router';
 class Profile extends Component {
   componentDidMount() {
     if (this.props.facebookObject.name != "logged out" && this.props.facebookObject !== undefined) {
-      this.props.fetchProfile(this.props.facebookObject.id);
+      if (this.props.profile === "logged out") {
+        this.props.fetchProfile(this.props.facebookObject.id);      
+      }
     }
     else {
       hashHistory.push('/');
