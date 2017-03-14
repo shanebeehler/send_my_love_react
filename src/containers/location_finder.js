@@ -91,7 +91,7 @@ class LocationFinder extends Component {
               </ReactTransitions>
             </label>
             <MapDisplay profile={this.props.profile}/>
-          </div>  
+          </div>
         );
       }
 
