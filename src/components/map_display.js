@@ -6,7 +6,7 @@ class MapDisplay extends React.Component {
   //     this.props.profile = this.props.profile.bind(this);
   // }
 
-  componentDidUpdate() {
+  componentDidMount() {
     if (this.props.profile !== "logged out") {
       var current_love = this.props.profile.current_love;
       console.log(current_love[0].lat);
@@ -61,8 +61,8 @@ class MapDisplay extends React.Component {
 
   render() {
     const mapStyle = {
-      width: '85%',
-      height: 500,
+      width: '100%',
+      height: "50vh",
       border: '1px solid black'
     };
 

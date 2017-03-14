@@ -7,6 +7,7 @@ import LocationDisplay                 from '../components/location_display';
 import PostsNew                        from './posts_new';
 import FacebookLogin                   from '../containers/facebook_login';
 import ReactTransitions                from 'react-transitions';
+import MapDisplay                      from '../components/map_display';
 // import '../../node_modules/react-transitions/dist/animations.css';
 
 const transition = "rotate-cube-bottom-out-rotate-cube-bottom-in";
@@ -89,8 +90,8 @@ class LocationFinder extends Component {
                   </div>
               </ReactTransitions>
             </label>
-            <PostsNew facebookObject={this.props.facebookObject} location={this.props.location} isDisabled={true}/>
-          </div>
+            <MapDisplay profile={this.props.profile}/>
+          </div>  
         );
       }
 
