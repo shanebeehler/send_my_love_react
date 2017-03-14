@@ -10,7 +10,7 @@ class Profile extends Component {
   componentDidMount() {
     if (this.props.facebookObject.name != "logged out" && this.props.facebookObject !== undefined) {
       if (this.props.profile === "logged out") {
-        this.props.fetchProfile(this.props.facebookObject.id);      
+        this.props.fetchProfile(this.props.facebookObject.id);
       }
     }
     else {
@@ -26,8 +26,9 @@ class Profile extends Component {
     else {
       return (
         <div>
-          <CurrentLoveDisplay profile={this.props.profile}/>
+          <h3>Your current connection:</h3>
           <MapDisplay profile={this.props.profile}/>
+          <CurrentLoveDisplay profile={this.props.profile}/>
           <FacebookLogin loggedIn={true} className="logout"/>
         </div>
       );
