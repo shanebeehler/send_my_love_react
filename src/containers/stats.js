@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { fetchStats }       from '../actions/index';
 import StatsDisplay         from '../components/stats_display';
+import PostsIndex           from '../containers/posts_index';
 import Loading              from 'react-loading';
 
 class Stats extends Component {
@@ -17,6 +18,7 @@ class Stats extends Component {
           <h2>Global Love Stats</h2>
           <div className="stats">
             <StatsDisplay title="total distance(km)" stats={this.props.stats} count={6}/>
+            <PostsIndex />
             <StatsDisplay title="times passed"       stats={this.props.stats} count={2}/>
             <StatsDisplay title="total people"       stats={this.props.stats} count={5}/>
             <StatsDisplay title="total cities"       stats={this.props.stats} count={0}/>

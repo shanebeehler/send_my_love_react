@@ -7,7 +7,15 @@ class MapDisplay extends React.Component {
   // }
 
   componentDidMount() {
-    if (this.props.profile !== "logged out") {
+    this.load()
+  }
+
+  componentDidUpdate() {
+    this.load()
+  }
+
+  load() {
+    if (this.props.profile !== "logged out" && this.props.profile.current_love.length > 0) {
       var current_love = this.props.profile.current_love;
       console.log(current_love[0].lat);
 
@@ -32,7 +40,7 @@ class MapDisplay extends React.Component {
       ];
 
       var infowindow2 = null;
-      var marker2 = null;      
+      var marker2 = null;
 
       if (current_love[2]) {
         var currentLoveLat2 = current_love[2].lat
@@ -67,6 +75,12 @@ class MapDisplay extends React.Component {
       var infowindow1 = new google.maps.InfoWindow({
         content: `You in ${current_love[1].city}, ${current_love[1].country}`,
       });
+
+      if (this.props.public) {
+        infowindow1 = new google.maps.InfoWindow({
+          content: `${current_love[1].name} in ${current_love[1].city}, ${current_love[1].country}`,
+        });
+      }
 
       var marker0 = new google.maps.Marker({
         position: coordinates[0],
