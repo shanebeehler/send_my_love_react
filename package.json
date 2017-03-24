@@ -49,6 +49,7 @@
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-counter": "^1.1.0",
+    "react-countup": "^2.0.3",
     "react-dom": "^15.4.2",
     "react-load-script": "0.0.2",
     "react-loading": "0.0.9",
